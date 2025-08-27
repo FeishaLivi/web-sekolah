@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SMK Negeri 1 Livi</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Tombol Interaktif -->
+<button id="darkModeToggle">🌓 Dark Mode</button>
+<button id="scrollTopBtn">⬆ Top</button>
+  <header>
+    <div class="container">
+      <h1>SMK Negeri 1 Livi</h1>
+      <nav>
+        <ul>
+          <li><a href="#profil">Profil</a></li>
+          <li><a href="#jurusan">Jurusan</a></li>
+          <li><a href="#kontak">Kontak</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <h2>Selamat Datang di Website Resmi</h2>
+      <p>SMK Negeri 1 Livi – Sekolah Vokasi Berkualitas</p>
+      <a href="#profil" class="btn">Lihat Profil Sekolah</a>
+    </div>
+  </section>
+
+  <section id="profil" class="content">
+    <div class="container">
+      <h3>Profil Sekolah</h3>
+      <p>   SMK Negeri 1 Livi adalah sekolah menengah kejuruan unggulan yang berkomitmen mencetak generasi muda siap kerja dengan kompetensi tinggi dan sikap profesional. Dengan fasilitas modern dan tenaga pengajar berpengalaman, kami mendukung pengembangan potensi siswa secara optimal.</p>
+      <p>   Sekolah kami menyediakan berbagai jurusan yang sesuai kebutuhan industri saat ini, serta program pengembangan keterampilan praktis yang inovatif. SMK Negeri 1 Livi menjadi tempat terbaik bagi siswa untuk mengasah bakat dan meraih masa depan cerah.</p>
+    </div>
+  </section>
+
+  <section id="jurusan" class="content gray">
+    <div class="container">
+      <h3>Jurusan Unggulan</h3>
+      <ul>
+        <li>Teknik Komputer dan Jaringan (TKJ)</li>
+        <li>Rekayasa Perangkat Lunak (RPL)</li>
+        <li>Akuntansi dan Keuangan Lembaga (AKL)</li>
+        <li>Administrasi Perkantoran (MP)</li>
+        <li>Layanan Perbankan Syariah (LPS)</li>
+        <li>Bisnis Digital (BD)</li>
+        <li>Bisnis Ritel (BR)</li>
+        <li>Desain Komunikasi Visual (DKV)</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="kontak" class="content">
+    <div class="container">
+      <h3>Kontak Kami</h3>
+      <p>Email: info@feishalivi2akun.sch.id</p>
+      <p>Telepon: 087708971728 </p>
+      <p>Alamat: Jl. Parangtritis Km 11 Sabdodadi Bantul Bantul Daerah Istimewa Yogyakarta, Sabdodadi, Kec. Bantul, Bantul, Daerah Istimewa Yogyakarta 55715, Indonesia.</p>
+    </div>
+  </section>
+
+  <div style="margin-top: 20px;">
+    <iframe 
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3952.049332486131!2d110.35305437569228!3d-7.889907978488622!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7b00889ad8f84d%3A0x2e0009ca7815eaf0!2sSMK%20Negeri%201%20Bantul!5e0!3m2!1sid!2sid!4v1755580600916!5m2!1sid!2sid"
+      width="100%" 
+      height="300" 
+      style="border:0;" 
+      allowfullscreen="" 
+      loading="lazy" 
+      referrerpolicy="no-referrer-when-downgrade">
+    </iframe>
+  </div>
+</div>
+</section>
+
+<script>
+  // Toggle Dark Mode
+  const darkToggle = document.getElementById("darkModeToggle");
+  darkToggle.addEventListener("click", () => {
+    document.body.classList.toggle("dark-mode");
+    document.querySelector("header").classList.toggle("dark-mode");
+    document.querySelectorAll(".content").forEach(section => {
+      section.classList.toggle("dark-mode");
+    });
+    document.querySelectorAll(".gray").forEach(section => {
+      section.classList.toggle("dark-mode");
+    });
+  });
+
+  // Scroll to Top Button
+  const scrollTopBtn = document.getElementById("scrollTopBtn");
+  window.onscroll = function () {
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+      scrollTopBtn.style.display = "block";
+    } else {
+      scrollTopBtn.style.display = "none";
+    }
+  };
+  scrollTopBtn.addEventListener("click", () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  });
+</script>
+
+<section class="content" id="pendaftaran">
+  <div class="container">
+    <h3>Formulir Pendaftaran</h3>
+
+    <form id="registrationForm">
+      <div class="form-group">
+        <label for="fullname">Nama Lengkap</label>
+        <input type="text" id="fullname" name="fullname" placeholder="Nama lengkap">
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" placeholder="Alamat email">
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Telepon</label>
+        <input type="tel" id="phone" name="phone" placeholder="Nomor telepon">
+      </div>
+
+      <div class="form-group">
+        <label for="address">Alamat</label>
+        <textarea id="address" name="address" placeholder="Alamat lengkap"></textarea>
+      </div>
+
+      <div class="form-group">
+        <label for="jurusan">Pilih Jurusan</label>
+        <select id="jurusan" name="jurusan">
+          <option value="">-- Pilih Jurusan --</option>
+          <option value="RPL">Rekayasa Perangkat Lunak</option>
+          <option value="TKJ">Teknik Komputer dan Jaringan</option>
+          <option value="AKL">Akuntansi dan Keuangan Lembaga</option>
+          <option value="MP">Administrasi Perkantoran</option>
+          <option value="LPS">Layanan Perbankan Syariah</option>
+          <option value="BD">Bisnis Digital</option>
+          <option value="BR">Bisnis Ritel</option>
+          <option value="DKV">Desain Komunikasi Visual</option>
+        </select>
+      </div>
+
+      <button type="submit">Daftar</button>
+    </form>
+
+    <p id="formMessage"></p>
+  </div>
+</section>
+<footer>
+  <div class="container">
+    <p>&copy; 2025 SMK Negeri 1 Livi. All rights reserved.</p>
+  </div>
+</footer>
+</body>
+</html>
